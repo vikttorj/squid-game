@@ -1,0 +1,25 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar-inner {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    padding: 20px;
+    background: #353535;
+}
+h4,
+button{
+    color: white;
+    margin: 0 !important;
+}
+
+button svg path{
+    fill: white;
+}

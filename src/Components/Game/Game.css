@@ -1,0 +1,42 @@
+.game-content {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    color: white;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.stoplight svg{
+    transform: scale(2.5);
+    height: 2em;
+}
+
+.stoplight.switched-on svg path {
+    fill: springgreen;
+}
+.stoplight.switched-off svg path {
+    fill: red;
+}
+
+button {
+    width: 150px;
+}
+
+.icon-shoes {
+    width: 25px;
+    margin: 5px 10px;
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.icon-left {
+    transform: scaleX(-1);
+}
