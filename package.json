@@ -2,6 +2,7 @@
   "name": "squid-game",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vikttorj.github.io/squid-game",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
@@ -17,6 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "eslint": "^8.22.0",
-    "eslint-plugin-react": "^7.31.0"
+    "eslint-plugin-react": "^7.31.0",
+    "gh-pages": "^4.0.0"
   }
 }
