@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import './Game.css'
 
@@ -7,31 +7,41 @@ import NavBar from '../NavBar/NavBar'
 import TungstenIcon from '@mui/icons-material/Tungsten';
 import logo from './steps-icon.png';
 
-import { countScore } from '../../services/Game'
+import { countScore, getHighScore } from '../../services/Game'
 import { getUser } from '../../services/User';
-
-const highScore = 0;
-let score = 0;
 
 export default function Game() {
     const [name, setName] = useState('');
-    getUser('GameSquid', 'user').then(name => {   
-        setName(name)
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+
+    useEffect(() => {
+        getUser('GameSquid', 'user').then(name => {
+            setName(name);
+        });
+        getHighScore('GameSquid', 'highScore').then(hS => {
+            setHighScore(hS);
+        });
     });
+
     return (
         <div className="content-wrapper">
             <NavBar className="navbar navbar" name={name ? name : ''} />
             <div className="game-content">
-                <p>High Score: {highScore}</p>
+                <p>High Score: {highScore >= score ? highScore : setHighScore(score)}</p>
                 <div className="stoplight switched-on">
                     <TungstenIcon />
                 </div>
-                <p>Score: {score}</p>
+                <p>Score: {score < 0 ? setScore(0) : score}</p>
                 <div className="buttons">
-                    <Button variant="contained" onClick={() => {countScore(0) ? score++ : score--} } startIcon={ <img src={logo} className="icon-shoes icon-left" alt="logo" />}>
+                    <Button variant="contained" onClick={() => {
+                        countScore('l', highScore) ? setScore(score + 1) : setScore(score - 1);
+                    }} startIcon={<img src={logo} className="icon-shoes icon-left" alt="logo" />}>
                         LEFT
                     </Button>
-                    <Button variant="contained" onClick={() => {countScore(1)? score++ : score--} } endIcon={<img src={logo} className="icon-shoes icon-right" alt="logo" />}>
+                    <Button variant="contained" onClick={() => {
+                        countScore('r', highScore) ? setScore(score + 1) : setScore(score - 1);
+                    }} endIcon={<img src={logo} className="icon-shoes icon-right" alt="logo" />}>
                         RIGHT
                     </Button>
                 </div>

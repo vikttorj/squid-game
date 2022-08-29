@@ -12,8 +12,6 @@ import {
 
 export default function App() {
 
-	let [name, setName] = useState('');
-	console.log('Name: ' + name)
 	return (
 		<div className="App">
 			<Router>
