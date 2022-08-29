@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import logo from '../../logo.svg';
 
@@ -18,14 +18,18 @@ const theme = createTheme({
 
 
 
-export default function Home({ name }) {
+export default function Home() {
 
+    const [name, setName] = useState('');
+    const handleChange = (event) => {
+        setName(event.target.value);
+    };
     return (
         <section className="home">
             <img src={logo} className="App-logo" alt="logo" />
             <h3 className="App-title">Create new player</h3>
-            <TextField label="Name" id="name" fullWidth required focused />
-            <Button label="Join" fullWidth variant="contained" onClick={() => {console.log(name)} }>Join</Button>
+            <TextField label="Name" id="name" value={name} onChange={handleChange} fullWidth required focused />
+            <Button label="Join" fullWidth variant="contained" onClick={() => { createUser(name) }}>Join</Button>
         </section>
     );
 } 
