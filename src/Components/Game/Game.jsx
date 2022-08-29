@@ -48,7 +48,6 @@ export default function Game() {
         }
         if (!intervalID) {
             intervalID = setTimeout(() => { flashText(); }, parseInt(time));
-            console.log(intervalID)
         }
         function flashText() {
             if (colorLight === 'red') {
