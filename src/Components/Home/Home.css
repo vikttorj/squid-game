@@ -6,6 +6,11 @@
     margin-top: 40px !important;
 }
 
+.home a {
+    width: 100%;
+    text-decoration: none;
+}
+
 .home {
     background-color: #282c34;
     min-height: 100vh;

@@ -8,11 +8,16 @@ import TungstenIcon from '@mui/icons-material/Tungsten';
 import logo from './steps-icon.png';
 
 import { countScore } from '../../services/Game'
+import { getUser } from '../../services/User';
 
 const highScore = 0;
 let score = 0;
 
-export default function Game( {name} ) {
+export default function Game() {
+    const [name, setName] = useState('');
+    getUser('GameSquid', 'user').then(name => {   
+        setName(name)
+    });
     return (
         <div className="content-wrapper">
             <NavBar className="navbar navbar" name={name ? name : ''} />

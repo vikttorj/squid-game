@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import logo from '../../logo.svg';
 
@@ -16,8 +17,6 @@ const theme = createTheme({
     },
 });
 
-
-
 export default function Home() {
 
     const [name, setName] = useState('');
@@ -29,7 +28,9 @@ export default function Home() {
             <img src={logo} className="App-logo" alt="logo" />
             <h3 className="App-title">Create new player</h3>
             <TextField label="Name" id="name" value={name} onChange={handleChange} fullWidth required focused />
-            <Button label="Join" fullWidth variant="contained" onClick={() => { createUser(name) }}>Join</Button>
+            <Link className='game-button' to='/game'>
+                <Button label="Join" fullWidth variant="contained" onClick={() => { createUser(name) }}>Join</Button>
+            </Link>
         </section>
     );
 } 

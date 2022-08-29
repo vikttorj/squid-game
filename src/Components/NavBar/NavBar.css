@@ -14,12 +14,13 @@
     padding: 20px;
     background: #353535;
 }
+
 h4,
-button{
+button {
     color: white;
     margin: 0 !important;
 }
 
-button svg path{
+button svg path {
     fill: white;
 }
