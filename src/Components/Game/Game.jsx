@@ -28,7 +28,8 @@ export default function Game() {
 
     function pressButton(btn) {
         if (colorLight == 'red') {
-            setScore(0)
+            setScore(0);
+            window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
         } else {
             countScore(btn, highScore) ? setScore(score + 1) : setScore(score - 1);
         }
