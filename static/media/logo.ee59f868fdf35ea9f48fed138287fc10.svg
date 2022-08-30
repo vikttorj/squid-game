@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 220" height="200" width="100%">
+	<style type="text/css">
+		svg,
+		.logo {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+
+		.logo {
+			border-radius: 100px;
+			opacity: 0;
+			animation: fadeIn 0.75s linear forwards;
+			animation-delay: 1s;
+		}
+
+		.circle,
+		.square,
+		.triangle{
+		  stroke-dasharray: 1000;
+		  stroke-dashoffset: 1000;
+		  animation: stroke .5s ease-out forwards;
+		}
+        .circle{
+            animation: stroke 4.8s ease-out forwards;
+        }
+        .triangle{
+            animation: stroke 4.6s ease-out forwards;
+        }
+
+		@keyframes stroke {
+		  to {
+			stroke-dashoffset: 0;
+		  }
+		}
+
+		@keyframes fadeIn {
+			to {
+                width:50px;
+                top:0;
+				opacity: 1;
+			}
+		}
+	</style>
+	<circle class="circle" cx="100" cy="100" r="95" stroke="white" stroke-width="10" fill-opacity="0" />
+	<polygon class="triangle" stroke-miterlimit="10" points="300,11 200,190 400,190" fill="none" stroke="white" stroke-width="10"/>
+	<polygon class="triangle" stroke-miterlimit="10" points="430,11 430,190 610,190 610,11" fill="none" stroke="white" stroke-width="10"/>
+</svg>
