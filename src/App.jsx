@@ -7,7 +7,7 @@ import Game from './Components/Game/Game';
 import { subscribe } from './utils/events';
 
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Routes,
 	Route
 } from 'react-router-dom';
