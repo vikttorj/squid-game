@@ -2,7 +2,7 @@
   "name": "squid-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vikttorj.github.io/squid-game",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",

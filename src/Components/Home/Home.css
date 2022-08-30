@@ -28,4 +28,5 @@
 .App-logo {
     width: 250px;
     pointer-events: none;
+    max-height: 150px;
 }
