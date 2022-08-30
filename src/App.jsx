@@ -14,7 +14,7 @@ export default function App() {
 
 	return (
 		<div className="App">
-			<Router>
+			<Router basename="/">
 				<Routes>
 					<Route path="/game" element={<Game name={name} />}></Route>
 					<Route path="/" element={<Home />}></Route>
