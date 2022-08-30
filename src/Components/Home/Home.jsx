@@ -38,6 +38,7 @@ export default function Home() {
             <h3 className="App-title">Create new player</h3>
 
             <TextField label="Name" id="name-field"
+                color="secondary"
                 error={(type == 'info') ? false : true}
                 value={name}
                 onChange={handleChange}
@@ -47,6 +48,7 @@ export default function Home() {
                 required
                 focused />
             <Button label="Join" 
+                color="secondary"
                 variant="contained" 
                 fullWidth
                 onClick={() => {pressButton();}}>Join</Button>

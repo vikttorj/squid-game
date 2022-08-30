@@ -12,6 +12,7 @@ import { getUser } from '../../services/User';
 
 export default function Game() {
     const [name, setName] = useState('');
+    const [fail, setFail] = useState(false);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [colorLight, setColorLight] = useState('springgreen');
@@ -28,6 +29,7 @@ export default function Game() {
 
     function pressButton(btn) {
         if (colorLight == 'red') {
+            setFail(true);
             setScore(0);
             window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
         } else {
@@ -36,7 +38,7 @@ export default function Game() {
     }
 
     let color = 'springgreen';
-    let time = 3000; // 10 seconds
+    let time = 10000; // 10 seconds
     let intervalID;
     function lightSwitch(score) {
         // red          3 seconds
@@ -55,6 +57,7 @@ export default function Game() {
             } else {
                 color = 'red';
             }
+            setFail(false);
             setColorLight(color);
         }
     }
@@ -65,13 +68,14 @@ export default function Game() {
         <div className="content-wrapper">
             <NavBar className="navbar navbar" name={name ? name : ''} />
             <div className="game-content">
-                <p>High Score: {highScore >= score ? highScore : setHighScore(score)}</p>
+                <p className="game-score">High Score: <span>{highScore >= score ? highScore : setHighScore(score)}</span></p>
                 <div className="stoplight">
                     <TungstenIcon sx={{ color: colorLight }} />
                 </div>
-                <p>Score: {score < 0 ? setScore(0) : score}</p>
+                <p className="game-score">Score: <span className={fail ? 'game-score-fail' : 'game-score-success'}>{score < 0 ? setScore(0) : score}</span></p>
                 <div className="buttons">
                     <Button variant="contained"
+                        color="secondary"
                         onClick={() => { pressButton('l') }}
                         startIcon={<img src={logo}
                             className="icon-shoes icon-left"
@@ -79,6 +83,7 @@ export default function Game() {
                         LEFT
                     </Button>
                     <Button variant="contained"
+                        color="secondary"
                         onClick={() => { pressButton('r') }}
                         endIcon={<img src={logo}
                             className="icon-shoes icon-right"
