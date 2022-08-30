@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 import { createUser } from '../../services/User';
 import { unsubscribe } from '../../utils/events';
+import { literals, nameEvents } from '../../utils/const';
 
 export default function Home() {
 
@@ -25,10 +26,10 @@ export default function Home() {
     function pressButton() {
         if (name) {
             createUser(name);
-            unsubscribe('createUserEvent');
+            unsubscribe(nameEvents?.createUser);
             navigate('/game');
         } else {
-            setHelper('Name necessary');
+            setHelper(literals?.errorHelperName);
             setType('error');
         }
     }

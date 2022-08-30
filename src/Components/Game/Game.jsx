@@ -8,13 +8,14 @@ import logo from './steps-icon.png';
 
 import { countScore } from '../../services/Game'
 import { getUser } from '../../services/User';
+import { gameProps } from '../../utils/const';
 
 export default function Game({props}) {
     const [name, setName] = useState(props?.name);
     const [fail, setFail] = useState(false);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
-    const [colorLight, setColorLight] = useState('springgreen');
+    const [colorLight, setColorLight] = useState(gameProps?.initialColor);
 
     // First render
     useEffect(() => {
@@ -38,13 +39,13 @@ export default function Game({props}) {
         }
     }
 
-    let color = 'springgreen';
-    let time = 10000; // 10 seconds
+    let color = gameProps?.initialColor;
+    let time = gameProps?.initialTime; // 10 seconds
     let intervalID;
     function lightSwitch(score) {
         // red          3 seconds
         // springgreen  10 seconds or max(10000 - score * 100, 2000) + random(-1500, 1500)
-        if (color === 'red') {
+        if (color === gameProps?.colorStop) {
             time = 3000;
         } else if (score > 0) {
             time = Math.max(10000 - score * 100, 2000) + Math.random(-1500, 1500);
@@ -53,10 +54,10 @@ export default function Game({props}) {
             intervalID = setTimeout(() => { flashText(); }, parseInt(time));
         }
         function flashText() {
-            if (colorLight === 'red') {
-                color = 'springgreen';
+            if (colorLight === gameProps?.colorStop) {
+                color = gameProps?.colorWalk;
             } else {
-                color = 'red';
+                color = gameProps?.colorStop;
             }
             setFail(false);
             setColorLight(color);
