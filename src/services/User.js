@@ -1,7 +1,8 @@
 import { cacheCustom } from '../utils/utils';
 import { publish} from '../utils/events';
 
-export function createUser(cacheName, name) {
+const cacheName = 'GameSquidUser';
+export function createUser(name) {
     getUser(cacheName, name).then((n) => {
         if (n === undefined) {
             cacheCustom.setCacheName(cacheName, name, 0);

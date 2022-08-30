@@ -24,7 +24,7 @@ export default function Home() {
 
     function pressButton() {
         if (name) {
-            createUser('GameSquidUser', name);
+            createUser(name);
             unsubscribe('createUserEvent');
             navigate('/game');
         } else {

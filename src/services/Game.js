@@ -1,7 +1,8 @@
 import { cacheCustom } from '../utils/utils';
 
 let prevPulsation = '';
-export const countScore = (cacheName, pulsation, name, score) => {
+const cacheName = 'GameSquidUser';
+export const countScore = (pulsation, name, score) => {
     saveScore(cacheName, name, score)
     let success = (prevPulsation != pulsation);
     console.log(success);

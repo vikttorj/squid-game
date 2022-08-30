@@ -18,7 +18,7 @@ export default function Game({props}) {
 
     // First render
     useEffect(() => {
-        getUser('GameSquidUser', name).then(sco => {
+        getUser(name).then(sco => {
             sco === undefined ? setScore(0) : setScore(sco);
         });
     }, []);
@@ -34,7 +34,7 @@ export default function Game({props}) {
             setScore(0);
             window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
         } else {
-            countScore('GameSquidUser', btn, name, highScore) ? setScore(score + 1) : setScore(score - 1);
+            countScore(btn, name, highScore) ? setScore(score + 1) : setScore(score - 1);
         }
     }
 
