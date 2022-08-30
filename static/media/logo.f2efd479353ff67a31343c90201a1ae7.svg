@@ -21,12 +21,15 @@
 		  stroke-dasharray: 1000;
 		  stroke-dashoffset: 1000;
 		  animation: stroke .5s ease-out forwards;
+		  animation-delay: 3.5s;
 		}
         .circle{
             animation: stroke 4.8s ease-out forwards;
+			animation-delay: 3.5s;
         }
         .triangle{
             animation: stroke 4.6s ease-out forwards;
+			animation-delay: 3.5s;
         }
 
 		@keyframes stroke {
