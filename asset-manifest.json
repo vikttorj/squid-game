@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/squid-game/static/css/main.3eb0bc1c.css",
-    "main.js": "/squid-game/static/js/main.be7a9e97.js",
+    "main.js": "/squid-game/static/js/main.fa15edd0.js",
     "static/js/787.f8de556a.chunk.js": "/squid-game/static/js/787.f8de556a.chunk.js",
     "service-worker.js": "/squid-game/service-worker.js",
     "static/media/logo.svg": "/squid-game/static/media/logo.ee59f868fdf35ea9f48fed138287fc10.svg",
     "index.html": "/squid-game/index.html",
     "main.3eb0bc1c.css.map": "/squid-game/static/css/main.3eb0bc1c.css.map",
-    "main.be7a9e97.js.map": "/squid-game/static/js/main.be7a9e97.js.map",
+    "main.fa15edd0.js.map": "/squid-game/static/js/main.fa15edd0.js.map",
     "787.f8de556a.chunk.js.map": "/squid-game/static/js/787.f8de556a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3eb0bc1c.css",
-    "static/js/main.be7a9e97.js"
+    "static/js/main.fa15edd0.js"
   ]
 }
