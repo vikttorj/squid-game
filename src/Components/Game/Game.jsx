@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import TungstenIcon from '@mui/icons-material/Tungsten';
 import logo from './steps-icon.png';
 
-import { countScore } from '../../services/Game'
+import { countScore, getHighScore } from '../../services/Game'
 import { getUser } from '../../services/User';
 import { gameProps } from '../../utils/const';
 
@@ -27,6 +27,9 @@ export default function Game({props}) {
         getUser(name).then(sco => {
             console.log(sco);
             sco === undefined ? setScore(0) : setScore(sco);
+        });
+        getHighScore(name).then(score => {
+            setHighScore(score);
         });
     }, []);
 
