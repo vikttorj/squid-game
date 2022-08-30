@@ -26,8 +26,8 @@ export default function Home() {
     function pressButton() {
         if (name) {
             createUser(name);
-            unsubscribe(nameEvents?.createUser);
             navigate('/game');
+            unsubscribe(nameEvents?.createUser);
         } else {
             setHelper(literals?.errorHelperName);
             setType('error');

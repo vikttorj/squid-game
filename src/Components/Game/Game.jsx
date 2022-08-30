@@ -17,20 +17,21 @@ export default function Game({props}) {
     const [highScore, setHighScore] = useState(0);
     const [colorLight, setColorLight] = useState(gameProps?.initialColor);
 
-    // First render
-    useEffect(() => {
-        getUser(name).then(sco => {
-            sco === undefined ? setScore(0) : setScore(sco);
-        });
-    }, []);
-
     useEffect(() => {
         setName(props?.name);
         lightSwitch(score);
     });
 
+    // First render
+    useEffect(() => {
+        getUser(name).then(sco => {
+            console.log(sco);
+            sco === undefined ? setScore(0) : setScore(sco);
+        });
+    }, []);
+
     function pressButton(btn) {
-        if (colorLight === 'red') {
+        if (colorLight === gameProps?.colorStop) {
             setFail(true);
             setScore(0);
             window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
