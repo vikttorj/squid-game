@@ -4,7 +4,7 @@ let prevPulsation = '';
 const cacheName = 'GameSquidUser';
 export const countScore = (pulsation, name, score) => {
     saveScore(cacheName, name, score)
-    let success = (prevPulsation != pulsation);
+    let success = (prevPulsation !== pulsation);
     console.log(success);
     prevPulsation = pulsation;
     return success;

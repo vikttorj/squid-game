@@ -16,7 +16,7 @@ export default function Home() {
     const [helper, setHelper] = useState('');
     const navigate = useNavigate();
     const handleChange = (event) => {
-        event?.keyCode == 13 ? pressButton() : null;
+        event?.keyCode === 13 ? pressButton() : null;
         setHelper('');
         setType('info');
         setName(event.target.value);
@@ -40,7 +40,7 @@ export default function Home() {
 
             <TextField label="Name" id="name-field"
                 color="secondary"
-                error={(type == 'info') ? false : true}
+                error={(type === 'info') ? false : true}
                 value={name}
                 onChange={handleChange}
                 onKeyUp={handleChange}

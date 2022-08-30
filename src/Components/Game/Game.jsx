@@ -29,7 +29,7 @@ export default function Game({props}) {
     });
 
     function pressButton(btn) {
-        if (colorLight == 'red') {
+        if (colorLight === 'red') {
             setFail(true);
             setScore(0);
             window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
@@ -44,7 +44,7 @@ export default function Game({props}) {
     function lightSwitch(score) {
         // red          3 seconds
         // springgreen  10 seconds or max(10000 - score * 100, 2000) + random(-1500, 1500)
-        if (color == 'red') {
+        if (color === 'red') {
             time = 3000;
         } else if (score > 0) {
             time = Math.max(10000 - score * 100, 2000) + Math.random(-1500, 1500);
