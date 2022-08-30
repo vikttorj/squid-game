@@ -1,9 +1,10 @@
 import { cacheCustom } from '../utils/utils';
 
 let prevPulsation = '';
-export const countScore = (pulsation, highScore) => {
-    saveHighScore(highScore);
+export const countScore = (cacheName, pulsation, name, score) => {
+    saveScore(cacheName, name, score)
     let success = (prevPulsation != pulsation);
+    console.log(success);
     prevPulsation = pulsation;
     return success;
 }
@@ -12,6 +13,6 @@ export async function getHighScore(cacheName, url) {
     return cacheCustom.getCacheName(cacheName, url);
 }
 
-function saveHighScore(highScore) {
-    cacheCustom.setCacheName('GameSquid', 'highScore', highScore);
+export function saveScore(cacheName, name, score) {
+    cacheCustom.setCacheName(cacheName, name, score + 1);
 }

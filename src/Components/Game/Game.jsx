@@ -1,30 +1,31 @@
 import { useState, useEffect } from 'react';
+import './Game.css';
+
+import NavBar from '../NavBar/NavBar';
 import Button from '@mui/material/Button';
-import './Game.css'
-
-import NavBar from '../NavBar/NavBar'
-
 import TungstenIcon from '@mui/icons-material/Tungsten';
 import logo from './steps-icon.png';
 
-import { countScore, getHighScore } from '../../services/Game'
+import { countScore } from '../../services/Game'
 import { getUser } from '../../services/User';
 
-export default function Game() {
-    const [name, setName] = useState('');
+export default function Game({props}) {
+    const [name, setName] = useState(props?.name);
     const [fail, setFail] = useState(false);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [colorLight, setColorLight] = useState('springgreen');
 
+    // First render
     useEffect(() => {
-        getUser('GameSquid', 'user').then(name => {
-            setName(name);
+        getUser('GameSquidUser', name).then(sco => {
+            sco === undefined ? setScore(0) : setScore(sco);
         });
-        getHighScore('GameSquid', 'highScore').then(hS => {
-            setHighScore(hS);
-        });
-        lightSwitch(score)
+    }, []);
+
+    useEffect(() => {
+        setName(props?.name);
+        lightSwitch(score);
     });
 
     function pressButton(btn) {
@@ -33,7 +34,7 @@ export default function Game() {
             setScore(0);
             window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
         } else {
-            countScore(btn, highScore) ? setScore(score + 1) : setScore(score - 1);
+            countScore('GameSquidUser', btn, name, highScore) ? setScore(score + 1) : setScore(score - 1);
         }
     }
 
@@ -46,7 +47,7 @@ export default function Game() {
         if (color == 'red') {
             time = 3000;
         } else if (score > 0) {
-            time = Math.max(10000 - score * 100, 2000) + Math.random(-1500, 1500)
+            time = Math.max(10000 - score * 100, 2000) + Math.random(-1500, 1500);
         }
         if (!intervalID) {
             intervalID = setTimeout(() => { flashText(); }, parseInt(time));
@@ -62,11 +63,9 @@ export default function Game() {
         }
     }
 
-
-
     return (
         <div className="content-wrapper">
-            <NavBar className="navbar navbar" name={name ? name : ''} />
+            <NavBar className="navbar navbar" name={name} />
             <div className="game-content">
                 <p className="game-score">High Score: <span>{highScore >= score ? highScore : setHighScore(score)}</span></p>
                 <div className="stoplight">

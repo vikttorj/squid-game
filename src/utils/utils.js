@@ -13,8 +13,7 @@ export const cacheCustom = {
 
         const cacheStorage = await caches.open(cacheName);
         const cachedResponse = await cacheStorage.match(url);
-
-        return cachedResponse.json().then((item) => {
+        return cachedResponse?.json().then((item) => {
             return item;
         });
     },

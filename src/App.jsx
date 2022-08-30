@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 
 import Home from './Components/Home/Home';
 import Game from './Components/Game/Game';
+
+import { subscribe } from './utils/events';
 
 import {
 	BrowserRouter as Router,
@@ -11,11 +14,14 @@ import {
 
 export default function App() {
 
+	const [name, setName] = useState('');
+	subscribe('createUserEvent', (e) => setName(e.detail));
+
 	return (
 		<div className="App">
-			<Router basename="/">
+			<Router>
 				<Routes>
-					<Route path="/game" element={<Game name={name} />}></Route>
+					<Route path="/game" element={<Game props={name} />}></Route>
 					<Route path="/" element={<Home />}></Route>
 				</Routes>
 			</Router>

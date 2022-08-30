@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import { createUser } from '../../services/User';
+import { unsubscribe } from '../../utils/events';
 
 export default function Home() {
 
@@ -17,20 +18,20 @@ export default function Home() {
     const handleChange = (event) => {
         event?.keyCode == 13 ? pressButton() : null;
         setHelper('');
-        setType('info')
+        setType('info');
         setName(event.target.value);
     };
 
     function pressButton() {
         if (name) {
-            createUser(name);
+            createUser('GameSquidUser', name);
+            unsubscribe('createUserEvent');
             navigate('/game');
         } else {
             setHelper('Name necessary');
-            setType('error')
+            setType('error');
         }
     }
-
 
     return (
         <section className="home">
