@@ -2,7 +2,7 @@
     color: white !important;
 }
 
-.home button{
+.home button {
     margin-top: 10px !important;
 }
 
@@ -29,4 +29,192 @@
     width: 250px;
     pointer-events: none;
     max-height: 150px;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.App-logo-squid {
+    top: -80%;
+    animation: movetop ease 1.5s;
+    -webkit-animation: movetop ease 1.5s;
+    -moz-animation: movetop ease 1.5s;
+    -o-animation: movetop ease 1.5s;
+    -ms-animation: movetop ease 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.App-logo-team {
+    bottom: -100%;
+    animation: movebottom ease 1.5s;
+    -webkit-animation: movebottom ease 1.5s;
+    -moz-animation: movebottom ease 1.5s;
+    -o-animation: movebottom ease 1.5s;
+    -ms-animation: movebottom ease 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.main {
+    opacity: 0;
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+    -moz-animation: fadeIn ease 1.5s;
+    -o-animation: fadeIn ease 1.5s;
+    -ms-animation: fadeIn ease 1.5s;
+    animation-delay: 1.7s;
+    animation-fill-mode: forwards;
+}
+
+
+/*fadeIn*/
+@-ms-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+/*movetop*/
+@-ms-keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
+@keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes movetop {
+    90% { opacity: 1}
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
+/*movebottom*/
+@-ms-keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+
+@keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes movebottom {
+    90% { opacity: 1}
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
 }
