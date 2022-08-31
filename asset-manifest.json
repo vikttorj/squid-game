@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/squid-game/static/css/main.7eafa420.css",
-    "main.js": "/squid-game/static/js/main.5949e5ca.js",
+    "main.css": "/squid-game/static/css/main.8ad992c3.css",
+    "main.js": "/squid-game/static/js/main.41afc1b1.js",
     "static/js/787.f8de556a.chunk.js": "/squid-game/static/js/787.f8de556a.chunk.js",
     "static/media/team.png": "/squid-game/static/media/team.cbca2479ccf0c18c9658.png",
     "service-worker.js": "/squid-game/service-worker.js",
     "static/media/squid_logo.png": "/squid-game/static/media/squid_logo.2156423ac5d52a889f6e.png",
+    "static/media/Game_Squids.ttf": "/squid-game/static/media/Game_Squids.e0727d0bce17b79e412d.ttf",
     "static/media/logo.svg": "/squid-game/static/media/logo.f2efd479353ff67a31343c90201a1ae7.svg",
     "index.html": "/squid-game/index.html",
-    "main.7eafa420.css.map": "/squid-game/static/css/main.7eafa420.css.map",
-    "main.5949e5ca.js.map": "/squid-game/static/js/main.5949e5ca.js.map",
+    "main.8ad992c3.css.map": "/squid-game/static/css/main.8ad992c3.css.map",
+    "main.41afc1b1.js.map": "/squid-game/static/js/main.41afc1b1.js.map",
     "787.f8de556a.chunk.js.map": "/squid-game/static/js/787.f8de556a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7eafa420.css",
-    "static/js/main.5949e5ca.js"
+    "static/css/main.8ad992c3.css",
+    "static/js/main.41afc1b1.js"
   ]
 }
