@@ -25,9 +25,11 @@ p {
 .stoplight.switched-off svg path {
     fill: red;
 }
+
 .game-content button {
     font-family: 'GameFont', Fallback, sans-serif;
 }
+
 button {
     width: 150px;
 }
@@ -48,16 +50,62 @@ button {
     color: silver;
 }
 
-.game-score span{
+.game-score span {
     font-weight: bold;
     color: white;
 }
-.game-score-success{
+
+.game-score-success {
     font-size: 1.4em;
 }
 
 .game-score-fail {
     animation: 2s anim-popoutin ease infinite;
+}
+.game-content img.img-game{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box-container-img > div{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all 0.3s linear;
+}
+.box-container-img > div.active {
+    transform: rotateY(360deg);
+}
+.box-container-img .red{
+    background: red;
+}
+.box-container-img .springgreen{
+    background: springgreen;
+}
+.game-content img.img-game {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transform-style: preserve-3d;
+    transition: all 0.3s linear;
+    opacity: 0;
+}
+.game-content img.img-game.active {
+    opacity: 1;
+}
+.box-container-img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
 }
 
 @keyframes anim-popoutin {

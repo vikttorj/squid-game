@@ -4,13 +4,15 @@ import './Game.css';
 import NavBar from '../NavBar/NavBar';
 import Button from '@mui/material/Button';
 import TungstenIcon from '@mui/icons-material/Tungsten';
-import logo from './steps-icon.png';
+import logo from './img/steps-icon.png';
+import lightRed from './img/light_red.png';
+import lightGreen from './img/light_green.png';
 
 import { countScore, getHighScore } from '../../services/Game'
 import { getUser } from '../../services/User';
 import { gameProps } from '../../utils/const';
 
-export default function Game({props}) {
+export default function Game({ props }) {
     const [name, setName] = useState(props?.name);
     const [fail, setFail] = useState(false);
     const [score, setScore] = useState(0);
@@ -37,7 +39,7 @@ export default function Game({props}) {
         if (colorLight === gameProps?.colorStop) {
             setFail(true);
             setScore(0);
-            window?.navigator?.vibrate ?  window.navigator.vibrate(500) : null;
+            window?.navigator?.vibrate ? window.navigator.vibrate(500) : null;
         } else {
             countScore(btn, name, highScore) ? setScore(score + 1) : setScore(score - 1);
         }
@@ -73,7 +75,13 @@ export default function Game({props}) {
             <NavBar className="navbar navbar" name={name} />
             <div className="game-content">
                 <p className="game-score">High Score: <span>{highScore >= score ? highScore : setHighScore(score)}</span></p>
-                <div className="stoplight">
+                <div className="stoplight box-container-img">
+                    <div className={colorLight == 'red' ? `${colorLight} img-game active` : `${colorLight} img-game`}>
+                        <img src={lightRed} 
+                            className={colorLight == 'red' ? 'img-game active' : 'img-game'} alt="imagen red" />
+                        <img src={lightGreen} 
+                            className={colorLight == 'springgreen' ? 'img-game active' : 'img-game'} alt="imagen green" />
+                    </div>
                     <TungstenIcon sx={{ color: colorLight }} />
                 </div>
                 <p className="game-score">Score: <span className={fail ? 'game-score-fail' : 'game-score-success'}>{score < 0 ? setScore(0) : score}</span></p>
