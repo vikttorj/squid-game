@@ -25,7 +25,6 @@ export default function Game({props}) {
     // First render
     useEffect(() => {
         getUser(name).then(sco => {
-            console.log(sco);
             sco === undefined ? setScore(0) : setScore(sco);
         });
         getHighScore(name).then(score => {

@@ -15,5 +15,5 @@ beforeEach(() => {
 })
 
 test('renders NavBar', () => {
-	component.getAllByText('Hi');
+	component.getAllByText('Hi,');
 });

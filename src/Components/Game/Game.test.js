@@ -15,5 +15,5 @@ beforeEach(() => {
 });
 
 test('renders Game', () => {
-    component.getByText('Score');
+    component.getAllByText('Score');
 });
