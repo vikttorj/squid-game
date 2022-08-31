@@ -15,5 +15,5 @@ export async function getHighScore(url) {
 }
 
 export async function saveScore(cacheName, name, score) {
-    await cacheCustom.setCacheName(cacheName, name, score + 1);
+    await cacheCustom.setCacheName(cacheName, name, score);
 }
