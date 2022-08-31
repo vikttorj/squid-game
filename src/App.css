@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'GameFont';
+  src: local('GameFont'), 
+    url(./fonts/Game_Squids.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
 .App {
   text-align: center;
   background-color: #282c34;
@@ -6,9 +13,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'GameFont', Fallback, sans-serif;
 }
 
 .App-link {
   color: #61dafb;
 }
+
+
 

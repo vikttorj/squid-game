@@ -1,9 +1,14 @@
 .home input {
     color: white !important;
+    font-family: 'GameFont', Fallback, sans-serif;
 }
 
+.home label{
+    font-family: 'GameFont', Fallback, sans-serif;
+}
 .home button {
     margin-top: 10px !important;
+    font-family: 'GameFont', Fallback, sans-serif;
 }
 
 .home a {

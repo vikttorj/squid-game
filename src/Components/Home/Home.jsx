@@ -45,9 +45,10 @@ export default function Home() {
             </div>
             <div className="main">
                 <img src={logo} className="App-logo" alt="logo" />
-                <h3 className="App-title">Create new player</h3>
+                <h3 className="App-title">New player</h3>
 
                 <TextField label="Name" id="name-field"
+                    variant="standard"
                     color="secondary"
                     error={(type === 'info') ? false : true}
                     value={name}
@@ -55,7 +56,6 @@ export default function Home() {
                     onKeyUp={handleChange}
                     helperText={(helper)}
                     fullWidth
-                    required
                     focused />
                 <Button label="Join" 
                     color="secondary"

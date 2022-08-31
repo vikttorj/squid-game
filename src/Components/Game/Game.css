@@ -25,7 +25,9 @@ p {
 .stoplight.switched-off svg path {
     fill: red;
 }
-
+.game-content button {
+    font-family: 'GameFont', Fallback, sans-serif;
+}
 button {
     width: 150px;
 }
@@ -49,6 +51,9 @@ button {
 .game-score span{
     font-weight: bold;
     color: white;
+}
+.game-score-success{
+    font-size: 1.4em;
 }
 
 .game-score-fail {
