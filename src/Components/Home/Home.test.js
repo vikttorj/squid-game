@@ -23,8 +23,10 @@ test('click name button, input Name empty', () => {
 
 test('click name button, input Name filled', () => {
   const button = component.getByText('Join');
-  const input = component.getByText('Name');
+  const input = component.getByLabelText('Name');
+  input.value = 'User';
   fireEvent.click(button);
 
   const el = component.getByText('Name necessary');
+  expect(el).not.toBeVisible
 });
