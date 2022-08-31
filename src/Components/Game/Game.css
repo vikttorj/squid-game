@@ -57,6 +57,7 @@ button {
 }
 
 .game-score-fail {
+    font-size: 1.4em;
     animation: 2s anim-popoutin ease infinite;
 }
 
