@@ -2,11 +2,16 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent } from '@testing-library/react';
 import Home from './Home';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 let component;
 
 beforeEach(() => {
-  component = render(<Home />);
+  component = render(
+    <Router>
+      <Home />
+    </Router>
+  );
 });
 
 test('renders Home', () => {
