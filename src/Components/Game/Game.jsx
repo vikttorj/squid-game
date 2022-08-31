@@ -24,6 +24,7 @@ export default function Game({props}) {
 
     // First render
     useEffect(() => {
+        setName(props?.name);
         getUser(name).then(sco => {
             sco === undefined ? setScore(0) : setScore(sco);
         });
