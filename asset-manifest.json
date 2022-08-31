@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/squid-game/static/css/main.8ad992c3.css",
-    "main.js": "/squid-game/static/js/main.41afc1b1.js",
+    "main.js": "/squid-game/static/js/main.3f2ef9e3.js",
     "static/js/787.f8de556a.chunk.js": "/squid-game/static/js/787.f8de556a.chunk.js",
     "static/media/team.png": "/squid-game/static/media/team.cbca2479ccf0c18c9658.png",
     "service-worker.js": "/squid-game/service-worker.js",
@@ -10,11 +10,11 @@
     "static/media/logo.svg": "/squid-game/static/media/logo.f2efd479353ff67a31343c90201a1ae7.svg",
     "index.html": "/squid-game/index.html",
     "main.8ad992c3.css.map": "/squid-game/static/css/main.8ad992c3.css.map",
-    "main.41afc1b1.js.map": "/squid-game/static/js/main.41afc1b1.js.map",
+    "main.3f2ef9e3.js.map": "/squid-game/static/js/main.3f2ef9e3.js.map",
     "787.f8de556a.chunk.js.map": "/squid-game/static/js/787.f8de556a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8ad992c3.css",
-    "static/js/main.41afc1b1.js"
+    "static/js/main.3f2ef9e3.js"
   ]
 }
