@@ -8,8 +8,11 @@ npm i
 ```
 
 
-## Playing
+## Playing Local
 
 ```
 npm start
 ```
+
+## Playing Online
+[https://vikttorj.github.io/squid-game](https://vikttorj.github.io/squid-game)
